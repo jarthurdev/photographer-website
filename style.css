@@ -1,0 +1,448 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --c1: #fff;
+    --c2: #000;
+    --c3: #050646;
+    --c4: #3f417c;
+
+    --f1: 'Montserrat';
+    --f2: 'Bebas Neue'
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.section{
+    margin: 4rem 0 0 0;
+}
+
+.container{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.button{
+    background-color: var(--c1);
+    padding: .5rem 1.5rem;
+    border-radius: .25rem;
+    color: var(--c2);
+    transition: .3s;
+    font-family: var(--f2);
+}
+
+.button:hover{
+    background-color: var(--c4);
+    color: white;
+}
+
+.divider{
+    height: 2.5rem;
+    width: 0.2rem;
+    background-color: var(--c1);
+}
+
+.grid{
+    display: grid;
+    gap: 2rem;
+}
+
+.tittle{
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* ======================================== */
+
+header{
+    background-color: var(--c3);
+    color: var(--c1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+#header .logo{
+    color: var(--c1);
+    font-family: var(--f2);
+    letter-spacing: .1rem;
+}
+
+nav{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.show .menu{
+    opacity: 1;
+    visibility: visible;
+
+    height: 100vh;
+    width: 100vw;
+    
+    background-color: var(--c3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: grid;
+    text-align: center;
+    place-content: center;
+
+    transition: .3s;
+}
+
+nav.show .icon-x{
+    opacity: 1;
+    visibility: visible;
+}
+
+nav.show .icon-menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav .menu ul li a{
+    font-size: 1.5rem;
+    color: var(--c1);
+    font-weight: bold;
+    position: relative;
+    font-family: var(--f2);
+    letter-spacing: .1rem;
+}
+
+nav .menu ul li a:hover{
+    transition: .3s;
+}
+
+nav .menu ul li a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background-color: var(--c1);
+    transition: .3s;
+}
+
+nav .menu ul li a:hover::after{
+    width: 100%;
+}
+
+.toggle{
+    position: absolute;
+    right: 1.5rem;
+    top: .7rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon-x{
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ------------------------------- */
+
+#home{
+    background-image: url(./assets/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 16rem;
+    
+    padding-top: 2rem;
+    padding-left: 2.5rem;
+    color: var(--c1);
+
+    margin-top: 3rem;
+
+    position: relative;
+}
+
+#home h1{
+    font-family: var(--f2);
+    font-size: 2rem;
+}
+
+#home p{
+    padding: .5rem 0 .6rem 0;    
+    font-family: 'Montserrat';
+}
+
+#home .divider{
+    position: absolute;
+    left: 2.1rem;
+    top: .5rem;
+}
+
+#home .divider.one{
+    top: 13rem;
+}
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 1.5rem;
+    top: 3.5rem;
+    font-size: 1.5rem;
+}
+
+.icons a{
+    padding: .25rem 0;
+    color: var(--c1);
+    transition: .3s;
+}
+
+.icons a:hover{
+    color: var(--c4);
+}
+
+/* ===================================== */
+
+#service h1{
+    font-family: var(--f2);
+}
+
+.cards{
+    text-align: center;
+    padding: 1rem 5rem;
+}
+
+.card{
+    border-radius: .25rem;
+    border-bottom: 2px solid var(--c2);
+    padding: 8rem 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1rem 0;
+}
+
+.card h2{
+    padding: 1rem 0;
+    font-family: var(--f2);
+}
+
+.card p{
+    font-family: var(--f1);
+}
+
+.card i{
+    font-size: 2rem;
+    color: var(--c3);
+}
+
+/* ===================================== */
+
+#recent{
+    text-align: center;
+}
+
+#recent h1{
+    padding-right: 1rem;
+    padding: 0 0 2rem 0;
+    font-family: var(--f2);
+}
+
+#recent .works{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 2rem;
+}
+
+#recent .works img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#recent .button{
+    text-align: center;
+    background-color: var(--c3);
+    color: var(--c1);
+}
+
+#recent .button:hover{
+    background-color: var(--c4);
+}
+
+/* ------------------- */
+
+#about{
+    background-color: var(--c3);
+    color: var(--c1);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+#about img{
+    height: 100%;
+    margin-left: 2rem;
+}
+
+#about h1{
+    text-align: left;
+    padding: .5rem 0;
+    font-family: var(--f2);
+} 
+
+#about .text{
+    padding-left: 2rem;
+    width: 30rem;
+    font-family: var(--f1);
+    font-size: .75rem;
+}
+
+
+/* FOOTER */
+
+footer{
+    background: var(--c2);
+    color: var(--c1);
+}
+
+footer h1{
+    text-align: center;
+    padding: 2rem 0 0 0;
+    margin-bottom: 2rem;
+    font-family: var(--f2);
+} 
+
+footer p{
+    font-family: var(--f2);
+    letter-spacing: .1rem;
+}
+
+footer .footer{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+footer .footer i{
+    font-size: 1.2rem;
+    color: var(--c1);
+}
+
+/* MEDIA QUERIE */
+
+@media (min-width: 1023px) {
+
+    #home{
+        height: 28rem;
+    }
+
+    #service .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #service .card{
+        margin: 1rem;
+    }
+
+    .tittle{
+        font-size: 3rem;
+    }
+
+    nav .menu{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav .menu ul{
+        display: flex;
+    }
+
+    nav .menu ul li a{
+        font-size: 1rem;
+    }
+
+    .toggle{
+        display: none;
+    }
+
+    #home .divider {
+        position: absolute;
+        left: 2.1rem;
+        top: 2.5rem;
+    }
+
+    .icons{
+        top: 10.5rem;
+        font-size: 1.5rem;
+    }
+
+    #recent .button{
+        padding: .5rem 5rem;
+        font-size: 1.5rem;
+    }
+
+    #home .button{
+        padding: .5rem 5rem;
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (min-width: 990px) {
+
+    #home{
+        height: 28rem;
+    }
+
+    .divider{
+        height: 5.5rem;
+        width: 0.2rem;
+        background-color: var(--c1);
+    }
+
+    #home .divider.one{
+        top: 20rem;
+    }
+
+    .icons{
+        top: 9.5rem;
+        font-size: 1.5rem;
+    }
+
+    #home p{
+        font-size: 1.5rem;
+    }
+    
+    #home h1{
+        font-size: 2rem;
+    }
+
+    #home .textarea{
+        padding: 2rem;
+    }
+
+}
